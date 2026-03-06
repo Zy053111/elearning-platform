@@ -140,13 +140,15 @@ CORS_ALLOWED_ORIGINS = [
     
 ]
 
+CSRF_TRUSTED_ORIGINS = ["http://178.128.89.233:5173"]
+
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
-        "CONFIG": {
-            "hosts": [("redis", 6379)],
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('redis', 6379)],
         },
-    }
+    },
 }
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
