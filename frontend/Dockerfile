@@ -1,5 +1,5 @@
-# Use Node.js 18 for the Vite project
-FROM node:18
+# Use Node.js 22 for the Vite project
+FROM node:22
 
 WORKDIR /app
 
